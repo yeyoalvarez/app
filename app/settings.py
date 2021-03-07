@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
-import app.db as db
 
 
 from pathlib import Path
@@ -44,7 +43,6 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'widget_tweaks',
     #apps
-    'core.erp',
     'core.login',
 
 ]
@@ -84,7 +82,16 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = db.postgresql
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'xe',
+        'USER': 'GESTION',
+        'PASSWORD': 'GESTION',
+        'HOST': 'localhost',
+        'PORT': '1521',
+    }
+}
 
 
 # Password validation
