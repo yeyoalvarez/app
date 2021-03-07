@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'widget_tweaks',
-    #apps
+    #apps usadas
     'core.login',
 ]
 
